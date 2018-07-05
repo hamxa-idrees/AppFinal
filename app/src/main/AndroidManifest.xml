@@ -20,6 +20,9 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -29,10 +32,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".LocationActivity" />
-        <activity android:name=".Registration" />
         <activity android:name=".MapActivity" />
         <activity android:name=".UserInformation" />
-        <activity android:name=".PhoneLogin"></activity>
+        <activity android:name=".PhoneLogin" />
+        <activity android:name=".Home" />
+        <activity android:name=".Electrician" />
+        <activity android:name=".Plumber" />
+        <activity android:name=".Painter" />
+        <activity android:name=".Welder" />
+        <activity android:name=".ComputerTecnicion"></activity>
     </application>
 
 </manifest>

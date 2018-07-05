@@ -10,4 +10,5 @@
     <color name="basePressColor">#8cc700</color>
     <color name="ballReleaseColor">#9E9E9E</color>
     <color name="aqua1">#8cc700</color>
+    <color name="btnadd">#ffff</color>
 </resources>

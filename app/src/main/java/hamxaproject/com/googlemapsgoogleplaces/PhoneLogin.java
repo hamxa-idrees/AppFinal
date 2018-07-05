@@ -1,7 +1,10 @@
 package hamxaproject.com.googlemapsgoogleplaces;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.icu.util.TimeUnit;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +26,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 public class PhoneLogin extends AppCompatActivity {
     private static final String TAG = "PhoneLogin";
     private boolean mVerificationInProgress = false;
@@ -34,14 +40,35 @@ public class PhoneLogin extends AppCompatActivity {
     ImageView i1;
     EditText e1,e2;
     Button b1,b2;
+    String phonenumbervalue;
+    public static final String PREFS_NAME = "Classes_Detail";
+    SharedPreferences sp;
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/Arkhip_font.ttf")
+                .setFontAttrId(R.attr.fontPath)
+                .build());
         setContentView(R.layout.activity_phone_login);
+
+        SharedPreferences classdetails = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        sp=getSharedPreferences("login",MODE_PRIVATE);
+        //if SharedPreferences contains username and password then redirect to Home activity
+        if(sp.contains("username") && sp.contains("password")){
+            startActivity(new Intent(PhoneLogin.this,LocationActivity.class));
+            finish();   //finish current activity
+        }
+
+
         e1 = (EditText) findViewById(R.id.Phonenoedittext);
         b1 = (Button) findViewById(R.id.PhoneVerify);
         t1 = (TextView)findViewById(R.id.textView2Phone);
-        i1 = (ImageView)findViewById(R.id.imageView2Phone);
+       // i1 = (ImageView)findViewById(R.id.imageView2Phone);
         e2 = (EditText) findViewById(R.id.OTPeditText);
         b2 = (Button)findViewById(R.id.OTPVERIFY);
         t2 = (TextView)findViewById(R.id.textViewVerified);
@@ -80,7 +107,7 @@ public class PhoneLogin extends AppCompatActivity {
                 e1.setVisibility(View.GONE);
                 b1.setVisibility(View.GONE);
                 t1.setVisibility(View.GONE);
-                i1.setVisibility(View.GONE);
+               // i1.setVisibility(View.GONE);
                 t2.setVisibility(View.VISIBLE);
                 e2.setVisibility(View.VISIBLE);
                 b2.setVisibility(View.VISIBLE);
@@ -91,6 +118,8 @@ public class PhoneLogin extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                phonenumbervalue=e1.getText().toString();
+
                 PhoneAuthProvider.getInstance().verifyPhoneNumber(
                         e1.getText().toString(),
                         60,
@@ -118,9 +147,17 @@ public class PhoneLogin extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+
+                            SharedPreferences classdetails = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+                            SharedPreferences.Editor e=sp.edit();
+                            e.putString("username",phonenumbervalue);
+                            e.apply();
+
+
                             // Log.d(TAG, "signInWithCredential:success");
-                            startActivity(new Intent(PhoneLogin.this,LocationActivity.class));
+
                             Toast.makeText(PhoneLogin.this,"Verification Done",Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(PhoneLogin.this, LocationActivity.class));
                             // ...
                         } else {
                             // Log.w(TAG, "signInWithCredential:failure", task.getException());

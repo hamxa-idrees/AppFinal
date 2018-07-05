@@ -1,19 +1,31 @@
 package hamxaproject.com.googlemapsgoogleplaces;
 
+import android.content.Context;
+
+
 /**
  * Created by HAmza on 14-Mar-18.
  */
 
 public class User {
-    private String email, name,address,cnic;
+    private String name,email,mobile,cnic;
+
     public User()
     {
     }
-    public User(String email, String name, String address, String cnic) {
-        this.email=email;
+    public User(String name, String email, String mobile, String cnic) {
         this.name=name;
-        this.address=address;
+        this.email=email;
+        this.mobile=mobile;
         this.cnic=cnic;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -24,23 +36,14 @@ public class User {
         this.email = email;
     }
 
-
-
-    public String getName() {
-        return name;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMobile(String phone) {
+        this.mobile = mobile;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setPhone(String phone) {
-        this.address = phone;
-    }
     public String getCnic() {
         return cnic;
     }
@@ -48,4 +51,7 @@ public class User {
     public void setCnic(String cnic) {
         this.cnic = cnic;
     }
-}
+
+
+    }
+

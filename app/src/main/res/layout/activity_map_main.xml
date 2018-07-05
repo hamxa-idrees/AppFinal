@@ -1,215 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/homescreen"
     android:weightSum="10"
     tools:context="hamxaproject.com.googlemapsgoogleplaces.LocationActivity">
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30dp"
+        android:fontFamily="@font/nunito_extralight"
+        android:text="Complete Your Profile"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/text_view_border"
+        android:ems="10"
+        android:fontFamily="@font/nunito_extralight"
+        android:hint="Enter Name"
+        android:inputType="textPersonName"
+        android:paddingBottom="15dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="15dp"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtName"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/text_view_border"
+        android:ems="10"
+        android:fontFamily="@font/nunito_extralight"
+        android:hint="Enter Email"
+        android:inputType="textEmailAddress"
+        android:paddingBottom="15dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="15dp"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/txtCnic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtPhone"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/text_view_border"
+        android:ems="10"
+        android:fontFamily="@font/nunito_extralight"
+        android:hint="Enter CNIC"
+        android:inputType="number"
+        android:paddingBottom="15dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="15dp"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/txtPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtEmail"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/text_view_border"
+        android:ems="10"
+        android:fontFamily="@font/nunito_extralight"
+        android:hint="Enter Mobile"
+        android:inputType="number"
+        android:paddingBottom="15dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="15dp"
+        android:textSize="24sp" />
+
+
 
     <Button
         android:id="@+id/btnMap"
-        android:layout_width="365dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Select Your Address" />
-
-    <RelativeLayout
-        android:layout_weight="2"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp">
-
-        <TextView
-            android:id="@+id/textGrid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="SELECT SERVICES"
-            android:textAllCaps="true"
-            android:textColor="@android:color/white"
-            android:textSize="34sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
-    <GridLayout
-        android:columnCount="2"
-        android:rowCount="3"
-        android:alignmentMode="alignMargins"
-        android:columnOrderPreserved="false"
-        android:layout_weight="8"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:padding="14dp">
-        <android.support.v7.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_rowWeight="1"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-
-            >
-<LinearLayout
-    android:layout_gravity="center_horizontal|center_vertical"
-    android:layout_margin="16dp"
-    android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-    <ImageView
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/plumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-<TextView
-    android:text="Plumber"
-    android:textAlignment="center"
-    android:textColor="@android:color/white"
-    android:textSize="18sp"
-    android:textStyle="bold"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
-</LinearLayout>
-        </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_rowWeight="1"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            >
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/electricion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:text="Electricion"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_rowWeight="1"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            >
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/painter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:text="Painter"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_rowWeight="1"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            >
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/weldor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:text="Welder"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowSpan="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_rowWeight="1"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            >
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/comtech"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:text="Electricion"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-    </GridLayout>
-
-
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtCnic"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/button_backgroung"
+        android:fontFamily="@font/nunito_extralight"
+        android:text="Select Your Location"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnMap"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_backgroung"
+        android:fontFamily="@font/nunito_extralight"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+</RelativeLayout>
