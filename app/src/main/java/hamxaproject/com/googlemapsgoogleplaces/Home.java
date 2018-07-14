@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -28,11 +29,11 @@ public class Home extends AppCompatActivity {
                 .setFontAttrId(R.attr.fontPath)
                 .build());
         setContentView(R.layout.activity_home);
-        Electrician=(Button)findViewById(R.id.btnElectricion);
-        Plumber=(Button)findViewById(R.id.btnPlumber);
-        Painter=(Button)findViewById(R.id.btnPainter);
-        Welder=(Button)findViewById(R.id.btnWeldor);
-        ComputerTechnicion=(Button)findViewById(R.id.btnComputer);
+       Electrician= (Button) findViewById(R.id.btnElectrian);
+       Plumber=(Button)findViewById(R.id.btnPlumber);
+       Painter=(Button)findViewById(R.id.btnPainter);
+       Welder=(Button)findViewById(R.id.btnWelder);
+      ComputerTechnicion=(Button)findViewById(R.id.btnComputer);
         Logout=(Button)findViewById(R.id.logout);
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override

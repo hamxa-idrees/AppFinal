@@ -8,13 +8,12 @@
     tools:context="hamxaproject.com.googlemapsgoogleplaces.Painter">
 
 
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Painter"
         android:gravity="center"
+        android:text="Painter"
+        android:textColor="@color/cast_expanded_controller_background_color"
         android:textSize="24dp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 </android.support.constraint.ConstraintLayout>

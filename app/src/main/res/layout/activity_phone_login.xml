@@ -52,18 +52,7 @@
         android:background="@drawable/layout_back"
         android:text="Send Code" />
 
-    <!--<ImageView-->
-        <!--android:id="@+id/imageView2Phone"-->
-        <!--android:layout_width="30dp"-->
-        <!--android:layout_height="30dp"-->
-        <!--android:layout_alignTop="@+id/Phonenoedittext"-->
-        <!--android:layout_marginEnd="9dp"-->
-        <!--android:layout_marginRight="9dp"-->
-        <!--android:layout_marginTop="7dp"-->
-        <!--android:layout_toLeftOf="@+id/textView2Phone"-->
-        <!--android:layout_toStartOf="@+id/textView2Phone"-->
-        <!--app:srcCompat="@drawable/ic_phone_iphone_black_24dp"-->
-        <!--tools:ignore="VectorDrawableCompat" />-->
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
