@@ -32,11 +32,12 @@
         android:layout_below="@+id/textView2Phone"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="41dp"
-        android:ems="10"
-        android:padding="10dp"
         android:background="@drawable/edittext_bck"
+        android:ems="10"
+        android:hint="Phone No."
         android:inputType="phone"
-        android:hint="Phone No."/>
+        android:padding="10dp"
+        android:textColor="@color/btnRegister" />
 
     <Button
         android:id="@+id/PhoneVerify"
@@ -86,29 +87,31 @@
                 android:id="@+id/OTPeditText"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:visibility="gone"
                 android:layout_below="@+id/textViewVerified"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="21dp"
-                android:ems="10"
-                android:padding="10dp"
                 android:background="@drawable/edittext_bck"
+                android:ems="10"
+                android:hint="OTP Here ..."
                 android:inputType="phone"
-                android:hint="OTP Here ..."/>
+                android:padding="10dp"
+                android:textColor="@color/btnRegister"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/OTPVERIFY"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/OTPeditText"
+                android:layout_alignLeft="@+id/OTPeditText"
+                android:layout_alignRight="@+id/OTPeditText"
+                android:layout_alignStart="@+id/OTPeditText"
                 android:layout_below="@+id/OTPeditText"
                 android:layout_marginTop="49dp"
-                android:text="Verify"
-                android:visibility="gone"
                 android:background="@drawable/layout_back"
-                android:layout_alignLeft="@+id/OTPeditText"
-                android:layout_alignStart="@+id/OTPeditText"
-                android:layout_alignRight="@+id/OTPeditText"
-                android:layout_alignEnd="@+id/OTPeditText" />
+                android:text="Verify"
+                android:textColor="@color/btnRegister"
+                android:visibility="gone" />
         </RelativeLayout>
     </FrameLayout>
 </RelativeLayout>

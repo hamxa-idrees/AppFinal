@@ -27,7 +27,8 @@ public class LocationActivity extends AppCompatActivity  {
     private Button Add;
     private EditText txtName,txtEmail,txtMobile,txtCnic;
     private DatabaseReference mDatabaseRef;
-
+    public static final String PREFS_NAME = "Classes_Detail";
+    SharedPreferences sp;
     private static final int ERROR_DIALOG_REQUEST = 9001;
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
@@ -43,6 +44,14 @@ public class LocationActivity extends AppCompatActivity  {
                 .setFontAttrId(R.attr.fontPath)
                 .build());
         setContentView(R.layout.activity_map_main);
+        SharedPreferences classdetails = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        sp=getSharedPreferences("login",MODE_PRIVATE);
+        //if SharedPreferences contains username and password then redirect to Home activity
+        if(sp.contains("seletlocation")){
+            //finish current activity
+            startActivity(new Intent(LocationActivity.this,Home.class));
+            finish();
+        }
         txtName=findViewById(R.id.txtName);
         txtEmail=findViewById(R.id.txtEmail);
         txtMobile=findViewById(R.id.txtPhone);
@@ -52,6 +61,11 @@ public class LocationActivity extends AppCompatActivity  {
         Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+               String nametxt= txtName.getText().toString();
+                SharedPreferences classdetails = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+                SharedPreferences.Editor e=sp.edit();
+                e.putString("seletlocation",nametxt);
+                e.apply();
                 User user= new User(txtName.getText().toString(),txtEmail.getText().toString(),txtMobile.getText().toString(),txtCnic.getText().toString());
                 mDatabaseRef.child("Users").push().setValue(user);
                // Toast.makeText(this,"Your Inforamtion Added Successfully",Toast.LENGTH_LONG).show();

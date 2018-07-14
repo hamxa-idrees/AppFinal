@@ -18,6 +18,7 @@
         android:fontFamily="@font/nunito_extralight"
         android:text="Complete Your Profile"
         android:textAlignment="center"
+        android:textColorHint="#000000"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -33,6 +34,7 @@
         android:fontFamily="@font/nunito_extralight"
         android:hint="Enter Name"
         android:inputType="textPersonName"
+        android:textColorHint="#000000"
         android:paddingBottom="15dp"
         android:paddingLeft="5dp"
         android:paddingTop="15dp"
@@ -49,6 +51,7 @@
         android:ems="10"
         android:fontFamily="@font/nunito_extralight"
         android:hint="Enter Email"
+        android:textColorHint="#000000"
         android:inputType="textEmailAddress"
         android:paddingBottom="15dp"
         android:paddingLeft="5dp"
@@ -66,6 +69,7 @@
         android:ems="10"
         android:fontFamily="@font/nunito_extralight"
         android:hint="Enter CNIC"
+        android:textColorHint="#000000"
         android:inputType="number"
         android:paddingBottom="15dp"
         android:paddingLeft="5dp"
@@ -84,11 +88,11 @@
         android:fontFamily="@font/nunito_extralight"
         android:hint="Enter Mobile"
         android:inputType="number"
+        android:textColorHint="#000000"
         android:paddingBottom="15dp"
         android:paddingLeft="5dp"
         android:paddingTop="15dp"
         android:textSize="24sp" />
-
 
 
     <Button
@@ -103,8 +107,10 @@
         android:fontFamily="@font/nunito_extralight"
         android:text="Select Your Location"
         android:textAllCaps="false"
+        android:textColor="@color/btnRegister"
         android:textSize="24sp"
         android:textStyle="bold" />
+
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="match_parent"
@@ -117,6 +123,7 @@
         android:paddingRight="50dp"
         android:text="Save"
         android:textAllCaps="false"
+        android:textColor="@color/btnRegister"
         android:textSize="24sp"
         android:textStyle="bold" />
 </RelativeLayout>

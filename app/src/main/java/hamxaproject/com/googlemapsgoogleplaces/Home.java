@@ -15,7 +15,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Home extends AppCompatActivity {
 
-    private Button Electrician,Plumber,Painter,Welder,ComputerTechnicion;
+    private Button Electrician,Plumber,Painter,Welder,ComputerTechnicion, Logout;
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
@@ -33,6 +33,20 @@ public class Home extends AppCompatActivity {
         Painter=(Button)findViewById(R.id.btnPainter);
         Welder=(Button)findViewById(R.id.btnWeldor);
         ComputerTechnicion=(Button)findViewById(R.id.btnComputer);
+        Logout=(Button)findViewById(R.id.logout);
+        Logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences sp= getSharedPreferences("login",MODE_PRIVATE);
+                SharedPreferences.Editor e=sp.edit();
+                e.clear();
+                e.apply();
+                Intent intent=new Intent(Home.this,PhoneLogin.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
 
         Electrician.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +98,7 @@ public class Home extends AppCompatActivity {
 
 
 
-
     }
+
+
 }
