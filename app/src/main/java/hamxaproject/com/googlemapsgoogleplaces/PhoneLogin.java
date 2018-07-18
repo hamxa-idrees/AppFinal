@@ -1,5 +1,6 @@
 package hamxaproject.com.googlemapsgoogleplaces;
 
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,6 +16,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.credentials.HintRequest;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -82,6 +86,10 @@ public class PhoneLogin extends AppCompatActivity {
                 Toast.makeText(PhoneLogin.this,"Verification Complete",Toast.LENGTH_SHORT).show();
                 signInWithPhoneAuthCredential(credential);
             }
+
+
+
+
 
             @Override
             public void onVerificationFailed(FirebaseException e) {

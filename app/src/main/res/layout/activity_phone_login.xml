@@ -13,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="25dp"/>
-    <TextView
+    <EditText
         android:background="@color/aqua1"
         android:id="@+id/textView2Phone"
         android:padding="10dp"
@@ -21,11 +21,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="99dp"
         android:textColor="#000"
-        android:text="Provide Phone no. with Country code"
+        android:text="Provide Phone no WithOut 0"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        />
 
-    <EditText
+    <com.santalu.maskedittext.MaskEditText
         android:id="@+id/Phonenoedittext"
         android:layout_width="250dp"
         android:layout_height="50dp"
@@ -37,7 +38,8 @@
         android:hint="Phone No."
         android:inputType="phone"
         android:padding="10dp"
-        android:textColor="@color/btnRegister" />
+        android:textColor="@color/btnRegister"
+        app:met_mask="+92##########"/>
 
     <Button
         android:id="@+id/PhoneVerify"
